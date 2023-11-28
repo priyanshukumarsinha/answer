@@ -1,18 +1,30 @@
 **1. Addressing Modes:**
 
 Addressing modes determine how a processor accesses operands. Examples include:
-- **Immediate Addressing:** Operand value in the instruction (e.g., `MOV AX, 5`).
-- **Register Addressing:** Operand is in a register (e.g., `ADD BX, AX`).
-- **Direct Addressing:** Operand's memory address is in the instruction (e.g., `MOV CX, [1234]`).
-- **Indirect Addressing:** Operand's memory address is in a register or memory (e.g., `MOV DX, [BX]`).
-- **Indexed Addressing:** Operand is at the sum of a register and a constant offset (e.g., `MOV SI, [DI + 10]`).
-- **Relative Addressing:** Operand address is relative to the program counter (e.g., `JMP Label`).
+
+- **Immediate Addressing:**
+  - Operand value is in the instruction (e.g., `MOV AX, 5`).
+
+- **Register Addressing:**
+  - Operand is in a register (e.g., `ADD BX, AX`).
+
+- **Direct Addressing:**
+  - Operand’s memory address is in the instruction (e.g., `MOV CX, [1234]`).
+
+- **Indirect Addressing:**
+  - Operand’s memory address is in a register or memory (e.g., `MOV DX, [BX]`).
+
+- **Indexed Addressing:**
+  - Operand is at the sum of a register and a constant offset (e.g., `MOV SI, [DI + 10]`).
+
+- **Relative Addressing:**
+  - Operand address is relative to the program counter (e.g., `JMP Label`).
 
 **2. Subroutine and Parameter Passing:**
 
 - **Subroutine:**
   - A set of instructions for a specific task.
-  
+
 - **Parameter Passing:**
   - Parameters can be passed via registers or the stack.
   - Example:
@@ -58,39 +70,41 @@ Addressing modes determine how a processor accesses operands. Examples include:
 
 - **Little Endian:**
   - Least significant byte stored at the lowest memory address.
-  - Representation of `64243848H` in 32 bits: `48382464` (Bytes: 64 24 38 48)
+  - Representation of `64243848H` in 32 bits: `48382464` (Bytes: 64 24 38 48).
 
 - **Big Endian:**
   - Most significant byte stored at the lowest memory address.
-  - Representation of `64243848H` in 32 bits: `64423848` (Bytes: 64 42 38 48)
+  - Representation of `64243848H` in 32 bits: `64423848` (Bytes: 64 42 38 48).
 
 **7. Addressing Modes:**
 
 - **Define Addressing Mode:**
   - Specifies how the CPU accesses operands in an instruction.
 
-- **i) Index Addressing Mode:**
-  - Operand at the sum of a register and a constant offset.
-  - Example: `MOV AX, [SI + 10]`
+- **Examples:**
+  - **i) Index Addressing Mode:**
+    - Operand is at the sum of a register and a constant offset.
+    - Example: `MOV AX, [SI + 10]`
 
-- **ii) Indirect Addressing Mode:**
-  - Memory address is in a register or memory location.
-  - Example: `MOV BX, [DI]`
+  - **ii) Indirect Addressing Mode:**
+    - Memory address is in a register or memory location.
+    - Example: `MOV BX, [DI]`
 
-- **iii) Relative Addressing Mode:**
-  - Operand address computed relative to the program counter.
-  - Example: `JMP Label`
+  - **iii) Relative Addressing Mode:**
+    - Operand address computed relative to the program counter.
+    - Example: `JMP Label`
 
-- **iv) Auto-Decrement Addressing Mode:**
-  - Decrement a register's value automatically before accessing memory.
-  - Example:
-    ```assembly
-    DEC SP            ; Decrement stack pointer
-    MOV AX, [SP]      ; Contents of memory at the new stack pointer
+  - **iv) Auto-Decrement Addressing Mode:**
+    - Decrement a register’s value automatically before accessing memory.
+    - Example:
+      ```assembly
+      DEC SP            ; Decrement stack pointer
+      MOV AX, [SP]      ; Contents of memory at the new stack pointer
+      ```
 
-  **8. Encoding of Machine Instructions:**
+**8. Encoding of Machine Instructions:**
 
-Machine instructions are encoded representations of operations executed by a computer's central processing unit (CPU). The encoding involves key components:
+Machine instructions are encoded representations of operations executed by a computer’s central processing unit (CPU). The encoding involves:
 
 - **Opcode:**
   - Represents the operation to be performed (e.g., addition, subtraction).
@@ -151,8 +165,8 @@ Machine instructions are encoded representations of operations executed by a com
     - Operand is at the sum of a register and a constant offset.
     - Example: `MOV AX, [SI + 10]`
 
-  - **ii) Indirect Addressing Mode:**
-    - Memory address is in a register or memory location.
+  - **ii) Indirect Addressing Mode:
+  -     - Memory address is in a register or memory location.
     - Example: `MOV BX, [DI]`
 
   - **iii) Relative Addressing Mode:**
@@ -160,8 +174,12 @@ Machine instructions are encoded representations of operations executed by a com
     - Example: `JMP Label`
 
   - **iv) Auto-Decrement Addressing Mode:**
-    - Decrement a register's value automatically before accessing memory.
-    - Example: `DEC SP` followed by `MOV AX, [SP]`
+    - Decrement a register’s value automatically before accessing memory.
+    - Example:
+      ```assembly
+      DEC SP            ; Decrement stack pointer
+      MOV AX, [SP]      ; Contents of memory at the new stack pointer
+      ```
 
 **12. Logical and Arithmetic Shift Instructions:**
 
